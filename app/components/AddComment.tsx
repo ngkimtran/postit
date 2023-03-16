@@ -35,7 +35,7 @@ const AddComment = ({ postId }: AddCommentProps) => {
         setIsDisabled(false);
       },
       onSuccess: () => {
-        queryClient.invalidateQueries(["posts"]);
+        queryClient.invalidateQueries(["post-detail"]);
         setContent("");
         setIsDisabled(false);
       },

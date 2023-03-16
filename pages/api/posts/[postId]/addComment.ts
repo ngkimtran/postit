@@ -14,7 +14,7 @@ export default async function POST(
       .status(401)
       .json({ message: "Please sign in to make a comment." });
 
-  const content: string = request.body?.data.content;
+  const { content, postId } = request.body?.data;
   const user = await prisma.user.findUnique({
     where: { email: session?.user?.email! }, // ! indicates non-null assertion operation
   });
@@ -33,7 +33,7 @@ export default async function POST(
       data: {
         content,
         userId: user?.id!,
-        postId: request.body?.data.postId,
+        postId: postId,
       },
     });
     response.status(200).json(result);
