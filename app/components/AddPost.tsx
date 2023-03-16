@@ -19,7 +19,8 @@ const AddPost = () => {
         error: (error) => error?.response?.data.message,
       }),
     {
-      onError: () => {
+      onError: (error) => {
+        console.log(error);
         setIsDisabled(false);
       },
       onSuccess: () => {
