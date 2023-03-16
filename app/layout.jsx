@@ -1,7 +1,7 @@
 import "./globals.css";
-import Nav from "./auth/Nav";
+import Nav from "./components/Nav";
 import { Roboto } from "next/font/google";
-import QueryWrapper from "./auth/QueryWrapper";
+import QueryWrapper from "./components/QueryWrapper";
 
 const roboto = Roboto({
   weight: ["400", "700"],

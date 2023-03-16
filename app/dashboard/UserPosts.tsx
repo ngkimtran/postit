@@ -2,10 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import Image from "next/image";
-import Link from "next/link";
 import { UserPostsType } from "../types/UserPosts";
-import EditPosts from "./EditPosts";
+import EditPosts from "../components/EditPosts";
 
 const getUserPosts = async () => {
   const response = await axios.get("/api/posts/userPosts");
